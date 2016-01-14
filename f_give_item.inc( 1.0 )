@@ -1,0 +1,520 @@
+#if defined _f_give_item_included
+  #endinput
+#endif
+#define _f_give_item_included
+
+#include <cstrike>
+#include <engine>
+#include <fun>
+
+stock f_give_item( index, iWeaponTypeID, iClip = 0, iBPAmmo = 0 )
+{
+	if( is_user_alive( index ) )
+	{	
+		switch( iWeaponTypeID )
+		{
+
+			case CSW_DEAGLE:
+			{
+	
+				if( user_has_weapon( index, CSW_DEAGLE ) ) 
+				{	
+					cs_set_weapon_ammo( find_ent_by_owner(-1, "weapon_deagle", index ), iClip );
+					cs_set_user_bpammo(index, iWeaponTypeID, iBPAmmo); 
+				}
+
+				else
+				{
+					give_item( index, "weapon_deagle" );
+
+					cs_set_weapon_ammo( find_ent_by_owner(-1, "weapon_deagle", index ), iClip );
+					cs_set_user_bpammo(index, iWeaponTypeID, iBPAmmo); 
+				}
+			}
+
+			case CSW_AWP:
+			{
+				if( user_has_weapon( index, CSW_AWP ) ) 
+				{		
+					cs_set_weapon_ammo( find_ent_by_owner(-1, "weapon_awp", index ), iClip );
+					cs_set_user_bpammo(index, iWeaponTypeID, iBPAmmo); 
+				}
+
+				else
+				{
+					give_item( index, "weapon_awp" );
+
+					cs_set_weapon_ammo( find_ent_by_owner(-1, "weapon_awp", index ), iClip );
+					cs_set_user_bpammo(index, iWeaponTypeID, iBPAmmo); 		
+				}
+			}
+	
+			case CSW_USP:
+			{
+				if( user_has_weapon( index, CSW_USP ) ) 
+				{		
+					cs_set_weapon_ammo( find_ent_by_owner(-1, "weapon_usp", index ), iClip );
+					cs_set_user_bpammo(index, iWeaponTypeID, iBPAmmo);
+				}
+
+				else
+				{
+					give_item( index, "weapon_usp" );
+
+					cs_set_weapon_ammo( find_ent_by_owner(-1, "weapon_usp", index ), iClip );
+					cs_set_user_bpammo(index, iWeaponTypeID, iBPAmmo);
+				}
+			}
+
+			case CSW_P228:
+			{
+				if( user_has_weapon( index, CSW_P228 ) ) 
+				{		
+					cs_set_weapon_ammo( find_ent_by_owner(-1, "weapon_p228", index ), iClip );
+					cs_set_user_bpammo(index, iWeaponTypeID, iBPAmmo);
+				}
+
+				else
+				{
+					give_item( index, "weapon_p228" );
+
+					cs_set_weapon_ammo( find_ent_by_owner(-1, "weapon_p228", index ), iClip );
+					cs_set_user_bpammo(index, iWeaponTypeID, iBPAmmo); 
+
+				}	
+			}
+
+			case CSW_SCOUT:
+			{
+				if( user_has_weapon( index, CSW_SCOUT ) ) 
+				{
+					cs_set_weapon_ammo( find_ent_by_owner(-1, "weapon_scout", index ), iClip );
+					cs_set_user_bpammo(index, iWeaponTypeID, iBPAmmo);
+				}
+
+				else
+				{
+					give_item( index, "weapon_scout" );
+
+					cs_set_weapon_ammo( find_ent_by_owner(-1, "weapon_scout", index ), iClip );
+					cs_set_user_bpammo(index, iWeaponTypeID, iBPAmmo); 
+
+				}	
+			}
+
+			case CSW_XM1014:
+			{
+				if( user_has_weapon( index, CSW_XM1014 ) ) 
+				{
+					cs_set_weapon_ammo( find_ent_by_owner(-1, "weapon_xm1014", index ), iClip );
+					cs_set_user_bpammo(index, iWeaponTypeID, iBPAmmo);
+				}
+
+				else
+				{
+					give_item( index, "weapon_xm1014" );
+
+					cs_set_weapon_ammo( find_ent_by_owner(-1, "weapon_xm1014", index ), iClip );
+					cs_set_user_bpammo(index, iWeaponTypeID, iBPAmmo); 
+
+				}	
+			}
+
+			case CSW_MAC10:
+			{
+				if( user_has_weapon( index, CSW_MAC10 ) ) 
+				{
+					cs_set_weapon_ammo( find_ent_by_owner(-1, "weapon_mac10", index ), iClip );
+					cs_set_user_bpammo(index, iWeaponTypeID, iBPAmmo);
+				}
+
+				else
+				{
+					give_item( index, "weapon_mac10" );
+
+					cs_set_weapon_ammo( find_ent_by_owner(-1, "weapon_mac10", index ), iClip );
+					cs_set_user_bpammo(index, iWeaponTypeID, iBPAmmo); 
+
+				}	
+			}
+
+			case CSW_AUG:
+			{
+				if( user_has_weapon( index, CSW_AUG ) ) 
+				{
+					cs_set_weapon_ammo( find_ent_by_owner(-1, "weapon_aug", index ), iClip );
+					cs_set_user_bpammo(index, iWeaponTypeID, iBPAmmo);
+				}
+
+				else
+				{
+					give_item( index, "weapon_aug" );
+
+					cs_set_weapon_ammo( find_ent_by_owner(-1, "weapon_aug", index ), iClip );
+					cs_set_user_bpammo(index, iWeaponTypeID, iBPAmmo); 
+
+				}
+			}
+
+			case CSW_ELITE:
+			{
+				if( user_has_weapon( index, CSW_ELITE ) ) 
+				{
+					cs_set_weapon_ammo( find_ent_by_owner(-1, "weapon_elite", index ), iClip );
+					cs_set_user_bpammo(index, iWeaponTypeID, iBPAmmo);
+				}
+
+				else
+				{
+					give_item( index, "weapon_elite" );
+
+					cs_set_weapon_ammo( find_ent_by_owner(-1, "weapon_elite", index ), iClip );
+					cs_set_user_bpammo(index, iWeaponTypeID, iBPAmmo); 
+
+				}	
+			}
+
+			case CSW_FIVESEVEN:
+			{
+				if( user_has_weapon( index, CSW_FIVESEVEN ) ) 
+				{
+					cs_set_weapon_ammo( find_ent_by_owner(-1, "weapon_fiveseven", index ), iClip );
+					cs_set_user_bpammo(index, iWeaponTypeID, iBPAmmo);
+				}
+
+				else
+				{
+					give_item( index, "weapon_fiveseven" );
+
+					cs_set_weapon_ammo( find_ent_by_owner(-1, "weapon_fivesven", index ), iClip );
+					cs_set_user_bpammo(index, iWeaponTypeID, iBPAmmo); 
+
+				}	
+			}
+
+			case CSW_UMP45:
+			{
+				if( user_has_weapon( index, CSW_UMP45 ) ) 
+				{
+					cs_set_weapon_ammo( find_ent_by_owner(-1, "weapon_ump45", index ), iClip );
+					cs_set_user_bpammo(index, iWeaponTypeID, iBPAmmo);
+				}
+
+				else
+				{
+					give_item( index, "weapon_ump45" );
+
+					cs_set_weapon_ammo( find_ent_by_owner(-1, "weapon_ump45", index ), iClip );
+					cs_set_user_bpammo(index, iWeaponTypeID, iBPAmmo); 
+
+				}	
+			}
+
+			case CSW_SG550:
+			{
+				if( user_has_weapon( index, CSW_SG550 ) ) 
+				{
+					cs_set_weapon_ammo( find_ent_by_owner(-1, "weapon_sg550", index ), iClip );
+					cs_set_user_bpammo(index, iWeaponTypeID, iBPAmmo);
+				}
+
+				else
+				{
+					give_item( index, "weapon_sg550" );
+
+					cs_set_weapon_ammo( find_ent_by_owner(-1, "weapon_sg550", index ), iClip );
+					cs_set_user_bpammo(index, iWeaponTypeID, iBPAmmo); 
+
+				}	
+			}
+
+			case CSW_GALIL:
+			{
+				if( user_has_weapon( index, CSW_GALIL ) ) 
+				{
+					cs_set_weapon_ammo( find_ent_by_owner(-1, "weapon_galil", index ), iClip );
+					cs_set_user_bpammo(index, iWeaponTypeID, iBPAmmo);
+				}
+
+				else
+				{
+					give_item( index, "weapon_galil" );
+
+					cs_set_weapon_ammo( find_ent_by_owner(-1, "weapon_galil", index ), iClip );
+					cs_set_user_bpammo(index, iWeaponTypeID, iBPAmmo); 
+
+				}	
+			}
+
+			case CSW_FAMAS:
+			{
+				if( user_has_weapon( index, CSW_FAMAS ) ) 
+				{
+					cs_set_weapon_ammo( find_ent_by_owner(-1, "weapon_famas", index ), iClip );
+					cs_set_user_bpammo(index, iWeaponTypeID, iBPAmmo);
+				}
+
+				else
+				{
+					give_item( index, "weapon_famas" );
+
+					cs_set_weapon_ammo( find_ent_by_owner(-1, "weapon_famas", index ), iClip );
+					cs_set_user_bpammo(index, iWeaponTypeID, iBPAmmo); 
+
+				}		
+			}
+
+			case CSW_GLOCK18:
+			{
+				if( user_has_weapon( index, CSW_GLOCK18 ) ) 
+				{
+					cs_set_weapon_ammo( find_ent_by_owner(-1, "weapon_glock18", index ), iClip );
+					cs_set_user_bpammo(index, iWeaponTypeID, iBPAmmo);
+				}
+
+				else
+				{
+					give_item( index, "weapon_glock18" );
+
+					cs_set_weapon_ammo( find_ent_by_owner(-1, "weapon_glock18", index ), iClip );
+					cs_set_user_bpammo(index, iWeaponTypeID, iBPAmmo); 
+
+				}	
+			}
+
+			case CSW_MP5NAVY:
+			{
+				if( user_has_weapon( index, CSW_MP5NAVY ) ) 
+				{
+					cs_set_weapon_ammo( find_ent_by_owner(-1, "weapon_mp5navy", index ), iClip );
+					cs_set_user_bpammo(index, iWeaponTypeID, iBPAmmo);
+				}
+
+				else
+				{
+					give_item( index, "weapon_mp5navy" );
+
+					cs_set_weapon_ammo( find_ent_by_owner(-1, "weapon_mp5navy", index ), iClip );
+					cs_set_user_bpammo(index, iWeaponTypeID, iBPAmmo); 
+
+				}
+			}
+
+			case CSW_M249:
+			{
+				if( user_has_weapon( index, CSW_M249 ) ) 
+				{
+					cs_set_weapon_ammo( find_ent_by_owner(-1, "weapon_m249", index ), iClip );
+					cs_set_user_bpammo(index, iWeaponTypeID, iBPAmmo);
+				}
+
+				else
+				{
+					give_item( index, "weapon_m249" );
+
+					cs_set_weapon_ammo( find_ent_by_owner(-1, "weapon_m249", index ), iClip );
+					cs_set_user_bpammo(index, iWeaponTypeID, iBPAmmo); 
+
+				}	
+			}
+
+			case CSW_M3:
+			{
+				if( user_has_weapon( index, CSW_M3 ) ) 
+				{
+					cs_set_weapon_ammo( find_ent_by_owner(-1, "weapon_m3", index ), iClip );
+					cs_set_user_bpammo(index, iWeaponTypeID, iBPAmmo);
+				}
+
+				else
+				{
+					give_item( index, "weapon_m3" );
+
+					cs_set_weapon_ammo( find_ent_by_owner(-1, "weapon_m3", index ), iClip );
+					cs_set_user_bpammo(index, iWeaponTypeID, iBPAmmo); 
+
+				}	
+			}
+
+			case CSW_M4A1:
+			{
+				if( user_has_weapon( index, CSW_M4A1 ) ) 
+				{
+					cs_set_weapon_ammo( find_ent_by_owner(-1, "weapon_m4a1", index ), iClip );
+					cs_set_user_bpammo(index, iWeaponTypeID, iBPAmmo);
+				}
+
+				else
+				{
+					give_item( index, "weapon_m4a1" );
+
+					cs_set_weapon_ammo( find_ent_by_owner(-1, "weapon_m4a1", index ), iClip );
+					cs_set_user_bpammo(index, iWeaponTypeID, iBPAmmo); 
+
+				}	
+			}
+
+			case CSW_TMP:
+			{
+				if( user_has_weapon( index, CSW_TMP ) ) 
+				{
+					cs_set_weapon_ammo( find_ent_by_owner(-1, "weapon_tmp", index ), iClip );
+					cs_set_user_bpammo(index, iWeaponTypeID, iBPAmmo);
+				}
+
+				else
+				{
+					give_item( index, "weapon_tmp" );
+
+					cs_set_weapon_ammo( find_ent_by_owner(-1, "weapon_tmp", index ), iClip );
+					cs_set_user_bpammo(index, iWeaponTypeID, iBPAmmo); 
+
+				}	
+			}
+
+			case CSW_G3SG1:
+			{
+				if( user_has_weapon( index, CSW_G3SG1 ) ) 
+				{
+					cs_set_weapon_ammo( find_ent_by_owner(-1, "weapon_g3sg1", index ), iClip );
+					cs_set_user_bpammo(index, iWeaponTypeID, iBPAmmo);
+				}
+
+				else
+				{
+					give_item( index, "weapon_g3sg1" );
+
+					cs_set_weapon_ammo( find_ent_by_owner(-1, "weapon_g3sg1", index ), iClip );
+					cs_set_user_bpammo(index, iWeaponTypeID, iBPAmmo); 
+
+				}
+			}
+
+			case CSW_SG552:
+			{
+				if( user_has_weapon( index, CSW_SG552 ) ) 
+				{
+					cs_set_weapon_ammo( find_ent_by_owner(-1, "weapon_sg552", index ), iClip );
+					cs_set_user_bpammo(index, iWeaponTypeID, iBPAmmo);
+				}
+
+				else
+				{
+					give_item( index, "weapon_sg552" );
+
+					cs_set_weapon_ammo( find_ent_by_owner(-1, "weapon_sg552", index ), iClip );
+					cs_set_user_bpammo(index, iWeaponTypeID, iBPAmmo); 
+
+				}	
+			}
+
+
+			case CSW_AK47:
+			{
+				if( user_has_weapon( index, CSW_AK47 ) ) 
+				{
+					cs_set_weapon_ammo( find_ent_by_owner(-1, "weapon_ak47", index ), iClip );
+					cs_set_user_bpammo(index, iWeaponTypeID, iBPAmmo);
+				}
+
+				else
+				{
+					give_item( index, "weapon_ak47" );
+
+					cs_set_weapon_ammo( find_ent_by_owner(-1, "weapon_ak47", index ), iClip );
+					cs_set_user_bpammo(index, iWeaponTypeID, iBPAmmo); 
+
+				}	
+			}
+
+			case CSW_P90:
+			{
+				if( user_has_weapon( index, CSW_P90 ) ) 
+				{
+					cs_set_weapon_ammo( find_ent_by_owner(-1, "weapon_p90", index ), iClip );
+					cs_set_user_bpammo(index, iWeaponTypeID, iBPAmmo);
+				}
+
+				else
+				{
+					give_item( index, "weapon_p90" );
+
+					cs_set_weapon_ammo( find_ent_by_owner(-1, "weapon_p90", index ), iClip );
+					cs_set_user_bpammo(index, iWeaponTypeID, iBPAmmo); 
+
+				}
+			}
+
+			case CSW_HEGRENADE:
+			{
+				if( user_has_weapon( index, CSW_HEGRENADE ) ) 
+				{
+					give_item( index, "weapon_hegrenade" );
+
+					cs_set_user_bpammo(index, iWeaponTypeID, iBPAmmo);
+				}
+
+				else
+				{
+					cs_set_user_bpammo(index, iWeaponTypeID, iBPAmmo);
+				}
+			}
+
+			case CSW_SMOKEGRENADE:
+			{
+				if( user_has_weapon( index, CSW_SMOKEGRENADE ) ) 
+				{
+					give_item( index, "weapon_smokegrenade" );
+
+					cs_set_user_bpammo(index, iWeaponTypeID, iBPAmmo);
+				}
+
+				else
+				{
+					cs_set_user_bpammo(index, iWeaponTypeID, iBPAmmo);
+				}
+			}
+
+			case CSW_FLASHBANG:
+			{
+				if( user_has_weapon( index, CSW_FLASHBANG ) ) 
+				{
+					give_item( index, "weapon_flashbang" );
+
+					cs_set_user_bpammo(index, iWeaponTypeID, iBPAmmo);
+				}
+
+				else
+				{
+					cs_set_user_bpammo(index, iWeaponTypeID, iBPAmmo);
+				}
+			}
+
+			case CSW_C4:
+			{
+				if( user_has_weapon( index, CSW_C4 ) ) 
+				{
+					give_item( index, "weapon_c4" );
+
+					cs_set_user_bpammo(index, iWeaponTypeID, iBPAmmo);
+				}
+
+				else
+				{
+					cs_set_user_bpammo(index, iWeaponTypeID, iBPAmmo);
+				}
+			}
+
+			case CSW_KNIFE:
+			{
+				if( !user_has_weapon( index, CSW_KNIFE ) ) 
+				{
+					give_item( index, "weapon_knife" );
+				}
+			}
+
+		}
+
+	}
+	
+}
