@@ -24,17 +24,17 @@ stock give_weapon( id, wp[], iClip = 0, iBPAmmo = 0 )
 
 	if( is_user_alive( id ) )
 	{
-		if( user_has_weapon( index, CSWID ) ) 
+		if( user_has_weapon( id, CSWID ) ) 
 		{   
-			cs_set_weapon_ammo( find_ent_by_owner(-1, wp_id, index ), 10 );
-			cs_set_user_bpammo(index, CSWID, 100); 
+			cs_set_weapon_ammo( find_ent_by_owner(-1, wp_id, id ), iClip );
+			cs_set_user_bpammo(id, CSWID, iBPAmmo); 
 		}
  		else
 		{
-			give_item( index, wp_id );
+			give_item( id, wp_id );
 
-			cs_set_weapon_ammo( find_ent_by_owner(-1, wp_id, index ), 10 );
-			cs_set_user_bpammo(index, CSWID, 100); 
+			cs_set_weapon_ammo( find_ent_by_owner(-1, wp_id, id ), iClip );
+			cs_set_user_bpammo(id, CSWID, iBPAmmo); 
 		}
 	}
 }
