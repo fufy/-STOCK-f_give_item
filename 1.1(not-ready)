@@ -1,0 +1,40 @@
+/*
+	Version 1.1 ( NOT-READY ). /untested /unworking /unpublic, please don't try using this version.
+*/
+
+#if defined _give_weapon_included
+  #endinput
+#endif
+#define _give_weapon_included
+
+
+#include <engine>
+#include <cstrike>
+#include <fun>
+
+stock give_weapon( id, wp[], iClip = 0, iBPAmmo = 0 )
+{
+	new wp_id[ 60 ];
+	formatex( wp_id, charsmax( wp_id ), "weapon_%s",wp);
+
+	new csw_id[ 60 ];
+	formatex( csw_id, charsmax( csw_id ), "CSW_%s", strtoupper( wp ) );
+	
+	new CSWID = str_to_num( csw_id );
+
+	if( is_user_alive( id ) )
+	{
+		if( user_has_weapon( index, CSWID ) ) 
+		{   
+			cs_set_weapon_ammo( find_ent_by_owner(-1, wp_id, index ), 10 );
+			cs_set_user_bpammo(index, CSWID, 100); 
+		}
+ 		else
+		{
+			give_item( index, wp_id );
+
+			cs_set_weapon_ammo( find_ent_by_owner(-1, wp_id, index ), 10 );
+			cs_set_user_bpammo(index, CSWID, 100); 
+		}
+	}
+}
