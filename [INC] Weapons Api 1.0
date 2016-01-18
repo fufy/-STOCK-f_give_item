@@ -1,13 +1,57 @@
-#if defined _f_give_item_included
+/*
+-------------------------------------------------------------------------------
+********************************************************************************
+-------------------------------------------------------------------------------
+
+			Weapons Api, version 1.0
+	Author:
+
+			Hy, my name is Fuffy, i made this stock for my self
+			and for the ExtreamCS community.
+
+			This file is a Non-profit Sofwtare,please don't seel or
+			edit this file, thank you.
+
+	Stock's:
+		get_current_weapon_speed(id)
+		give_weapon(id, iWeaponTypeID,iClip=0, iBPAmmo=0)
+		weapon_name(id)
+
+
+	Credits:
+
+		AMX MOD Dev, 
+		Nubo, 
+		Exolent, 
+		Bugsy, 
+		Connor,
+		xtreamCS community.
+-------------------------------------------------------------------------------
+********************************************************************************
+-------------------------------------------------------------------------------
+*/
+
+#if defined _weapons_api_included
   #endinput
 #endif
-#define _f_give_item_included
+#define _weapons_api_included
 
 #include <cstrike>
 #include <engine>
 #include <fun>
 
-stock f_give_item( index, iWeaponTypeID, iClip = 0, iBPAmmo = 0 )
+/***********
+		@ give_weapon( )
+		
+		@Index - The player Index
+		@iWeaponTypeID - CSW_ id weapon
+		@iClip - Clip of weapon
+		@iBPAmmo - Back Pack Ammo of weapon.
+
+
+***********/
+
+stock give_weapon( index, iWeaponTypeID, iClip = 0, iBPAmmo = 0 )
 {
 	if( is_user_alive( index ) )
 	{	
@@ -517,4 +561,61 @@ stock f_give_item( index, iWeaponTypeID, iClip = 0, iBPAmmo = 0 )
 
 	}
 	
+}
+
+/***********
+
+	@ Return the current weapon from the players hand.
+
+***********/
+
+stock get_current_weapon_speed( id ) 
+{
+	new iSpeed;
+
+	switch( get_user_weapon( id ) ) 
+	{ 	
+		case CSW_KNIFE: iSpeed = 250; 
+		case CSW_SCOUT: iSpeed = 260; 
+     	 	case CSW_USP: iSpeed = 250; 
+        	case CSW_P228: iSpeed = 250; 
+        	case CSW_HEGRENADE: iSpeed = 250; 
+        	case CSW_XM1014: iSpeed = 240; 
+        	case CSW_C4: iSpeed = 250; 
+        	case CSW_AUG: iSpeed = 240; 
+        	case CSW_SMOKEGRENADE: iSpeed = 250; 
+        	case CSW_ELITE: iSpeed = 250; 
+        	case CSW_FIVESEVEN: iSpeed = 250; 
+        	case CSW_UMP45: iSpeed = 250; 
+        	case CSW_SG550: iSpeed = 210; 
+        	case CSW_GALIL: iSpeed = 240; 
+        	case CSW_FAMAS: iSpeed = 240; 
+        	case CSW_GLOCK18: iSpeed = 250; 
+        	case CSW_AWP: iSpeed = 210; 
+        	case CSW_MP5NAVY: iSpeed = 250; 
+        	case CSW_M249: iSpeed = 220; 
+        	case CSW_M3: iSpeed = 230; 
+        	case CSW_M4A1: iSpeed = 230; 
+        	case CSW_TMP: iSpeed = 250; 
+        	case CSW_G3SG1: iSpeed = 210; 
+        	case CSW_FLASHBANG: iSpeed = 250; 
+        	case CSW_DEAGLE: iSpeed = 250; 
+        	case CSW_SG552: iSpeed = 235; 
+        	case CSW_AK47: iSpeed = 221; 
+        	case CSW_P90: iSpeed = 245 
+	} 
+	return iSpeed; 
+}
+
+/*
+	Return weapon name from your hand( without the weapon_* prefix. );
+*/
+stock weapon_name( id )
+{
+	new szWpName[ 40 ];
+	get_weaponname( get_user_weapon( id ) , szWpName, charsmax( szWpName ) );
+
+	replace( szWpName, charsmax( szWpName ), "weapon_", "" );
+
+	return szWpName;
 }
