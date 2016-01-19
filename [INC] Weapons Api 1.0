@@ -13,9 +13,9 @@
 			edit this file, thank you.
 
 	Stock's:
-		get_current_weapon_speed(id)
+		get_user_weaponspeed(id)
 		give_weapon(id, iWeaponTypeID,iClip=0, iBPAmmo=0)
-		weapon_name(id)
+		get_user_weaponname(id)
 
 
 	Credits:
