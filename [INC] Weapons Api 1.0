@@ -569,7 +569,7 @@ stock give_weapon( index, iWeaponTypeID, iClip = 0, iBPAmmo = 0 )
 
 ***********/
 
-stock get_current_weapon_speed( id ) 
+stock get_user_weaponspeed( id ) 
 {
 	new iSpeed;
 
@@ -610,12 +610,14 @@ stock get_current_weapon_speed( id )
 /*
 	Return weapon name from your hand( without the weapon_* prefix. );
 */
-stock weapon_name( id )
+stock get_user_weaponname( id )
 {
-	new szWpName[ 40 ];
+	new szWpName[ 20 ];
 	get_weaponname( get_user_weapon( id ) , szWpName, charsmax( szWpName ) );
 
 	replace( szWpName, charsmax( szWpName ), "weapon_", "" );
+	
+	ucfirst( szWpName );
 
 	return szWpName;
 }
